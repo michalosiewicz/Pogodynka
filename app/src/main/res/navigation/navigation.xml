@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/normalViewFragment">
+
+    <fragment
+        android:id="@+id/normalViewFragment"
+        android:name="com.micosi.pogodynka.ui.weather_norm.NormWeatherFragment"
+        android:label="fragment_normal_view"
+        tools:layout="@layout/fragment_norm_weather">
+        <action
+            android:id="@+id/action_normalViewFragment_to_changeCityFragment"
+            app:destination="@id/changeCityFragment" />
+        <argument
+            android:name="city"
+            android:defaultValue="Gliwice"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_normalViewFragment_to_oldWeatherFragment"
+            app:destination="@id/oldWeatherFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/changeCityFragment"
+        android:name="com.micosi.pogodynka.ui.change_city.ChangeCityFragment"
+        android:label="fragment_change_city"
+        tools:layout="@layout/fragment_change_city">
+        <action
+            android:id="@+id/action_changeCityFragment_to_normalViewFragment"
+            app:destination="@id/normalViewFragment" />
+        <action
+            android:id="@+id/action_changeCityFragment_to_oldWeatherFragment"
+            app:destination="@id/oldWeatherFragment" />
+        <argument
+            android:name="appView"
+            app:argType="com.micosi.pogodynka.models.AppView" />
+    </fragment>
+    <fragment
+        android:id="@+id/oldWeatherFragment"
+        android:name="com.micosi.pogodynka.ui.weather_old.OldWeatherFragment"
+        android:label="fragment_old_weather"
+        tools:layout="@layout/fragment_old_weather" >
+        <argument
+            android:name="city"
+            app:argType="string"
+            android:defaultValue="Gliwice" />
+        <action
+            android:id="@+id/action_oldWeatherFragment_to_changeCityFragment"
+            app:destination="@id/changeCityFragment" />
+        <action
+            android:id="@+id/action_oldWeatherFragment_to_normalViewFragment"
+            app:destination="@id/normalViewFragment" />
+    </fragment>
+</navigation>

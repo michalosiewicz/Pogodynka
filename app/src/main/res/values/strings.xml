@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Pogoda</string>
+    <string name="change_city">Zamiana Miasta</string>
+    <string name="button_change_city">Zamień miasto</string>
+    <string name="city">Miasto</string>
+    <string name="main_view">Główny widok</string>
+
+    <string name="degrees">Temperatura</string>
+    <string name="icon">Ikonka</string>
+    <string name="description">Opis</string>
+    <string name="pressure">Ciśnienie</string>
+    <string name="sunrise">Wschód słońca</string>
+    <string name="sunset">Zachód słońca</string>
+    <string name="time">Godzina</string>
+    <string name="date">Data</string>
+</resources>

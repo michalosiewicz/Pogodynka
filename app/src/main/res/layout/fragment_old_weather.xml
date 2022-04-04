@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.weather_old.OldWeatherFragment">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.micosi.pogodynka.ui.weather_old.OldWeatherViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background">
+
+        <LinearLayout
+            android:id="@+id/names"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/values">
+
+            <TextView
+                style="@style/OldTextView.White"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="@string/city" />
+
+            <TextView
+                style="@style/OldTextView.White"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:text="@string/degrees" />
+
+            <TextView
+                style="@style/OldTextView.White"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:text="@string/icon" />
+
+            <TextView
+                style="@style/OldTextView.White"
+                android:layout_width="wrap_content"
+                android:text="@string/description" />
+
+            <TextView
+                style="@style/OldTextView.White"
+                android:layout_width="wrap_content"
+                android:text="@string/time" />
+
+            <TextView
+                style="@style/OldTextView.White"
+                android:layout_width="wrap_content"
+                android:text="@string/date" />
+
+            <TextView
+                style="@style/OldTextView.White"
+                android:layout_width="wrap_content"
+                android:text="@string/pressure" />
+
+            <TextView
+                style="@style/OldTextView.White"
+                android:layout_width="wrap_content"
+                android:text="@string/sunrise" />
+
+            <TextView
+                style="@style/OldTextView.White"
+                android:layout_width="wrap_content"
+                android:text="@string/sunset" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/values"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            app:layout_constraintLeft_toRightOf="@id/names"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <TextView
+                style="@style/OldTextView.Yellow"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="@={viewModel.city}"
+                android:textSize="30sp" />
+
+            <TextView
+                style="@style/OldTextView.Yellow"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:text="@={viewModel.appWeather.degrees}"
+                android:textSize="70sp" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="96dp"
+                android:layout_height="96dp" />
+
+            <TextView
+                style="@style/OldTextView.Yellow"
+                android:layout_width="wrap_content"
+                android:text="@={viewModel.appWeather.description}" />
+
+            <TextView
+                style="@style/OldTextView.Yellow"
+                android:layout_width="wrap_content"
+                android:text="@={viewModel.time}" />
+
+            <TextView
+                style="@style/OldTextView.Yellow"
+                android:layout_width="wrap_content"
+                android:text="@={viewModel.date}" />
+
+            <TextView
+                style="@style/OldTextView.Yellow"
+                android:layout_width="wrap_content"
+                android:text="@={viewModel.appWeather.pressure}" />
+
+            <TextView
+                style="@style/OldTextView.Yellow"
+                android:layout_width="wrap_content"
+                android:text="@={viewModel.appWeather.east}" />
+
+            <TextView
+                style="@style/OldTextView.Yellow"
+                android:layout_width="wrap_content"
+                android:text="@={viewModel.appWeather.west}" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/mainView"
+            style="@style/Button"
+            android:layout_width="wrap_content"
+            android:text="@string/main_view"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+        <Button
+            android:id="@+id/changeCity"
+            style="@style/Button"
+            android:layout_width="wrap_content"
+            android:text="@string/button_change_city"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
